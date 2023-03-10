@@ -2,43 +2,28 @@
 pragma solidity ^0.8.9;
 
 contract Switch {
-    struct WiredSwitch {
-        bool firstSwitch;
-        bool secondSwitch;
+
+    // TODO: 1.Create struct of WiredSwitch that contains two field firstSwitch and secondSwitch with type boolean.
+
+    // TODO: 2.Create enum of Toggle that contains two field firstSwitch and secondSwitch.
+
+    // TODO: 3.Create variable lightSwitch with type boolean.
+
+	// TODO: 4.Create variable wiredSwitch with type WiredSwitch struct.
+
+    // TODO: 5.Create construct that receive two argument with initail state of two switch.
+    constructor() {
+        /// code here
     }
 
-    enum Toggle {
-        firstSwitch,
-        SecondSwitch
-    }
-
-    /// Simple light switch.
-    bool public lightSwitch;
-
-    /// This switch has models two light switches with one weird property.
-    /// Whenever switch one is turned off, switch two also goes off.
-    WiredSwitch public wiredSwitch;
-
-    constructor(bool _lighSwtich, WiredSwitch memory _wiresSwitch) payable {
-        wiredSwitch = _wiresSwitch;
-        lightSwitch = _lighSwtich;
-    }
-
+    // TODO: 6.Create toggle switch function
     function toggleLightSwitch() external {
-        lightSwitch = !lightSwitch;
+        /// code here
     }
 
-    function toggleWiredSwitch(Toggle toggle) external {
-        if (toggle == Toggle.SecondSwitch) {
-            wiredSwitch.firstSwitch = wiredSwitch.firstSwitch;
-            wiredSwitch.secondSwitch = !wiredSwitch.secondSwitch;
-        } else {
-            wiredSwitch.firstSwitch = !wiredSwitch.firstSwitch;
-
-            if(!wiredSwitch.firstSwitch) {
-                wiredSwitch.secondSwitch = false;
-            }
-        }
+    // TODO: 7.Create toggle wired switch function according to testcase.
+    function toggleWiredSwitch() external {
+        /// code here
     }
 
 }
