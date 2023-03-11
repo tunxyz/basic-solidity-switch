@@ -143,6 +143,23 @@ describe("Switch", function () {
 
       });
 
+      it("Should work when initial state is (true, false)", async function () {
+        const { Switch, Toggle } = await loadFixture(getSwitchFixture);
+
+        const initialLightSwitch = true;
+        const initialWiredSwitch = { firstSwitch: true, secondSwitch: false };
+
+        const switchContract = await Switch.deploy(initialLightSwitch, initialWiredSwitch);
+
+        await switchContract.toggleWiredSwitch(Toggle.secondSwitch)
+
+        const wiredSwitch = await switchContract.wiredSwitch()
+
+        expect(wiredSwitch.firstSwitch).to.be.true
+        expect(wiredSwitch.secondSwitch).to.be.true
+
+      });
+
     });
 
   });
